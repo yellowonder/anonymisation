@@ -1,0 +1,18 @@
+{
+   "train_file": "/datastore/voc-ner/data/ner/selected/max-tokens-bertje/json/train_all.json",
+    # the data should be in csv or json format, see the Huggingface readme
+ 
+   "validation_file": "/datastore/voc-ner/data/ner/selected/max-tokens-bertje/json/dev_all.json",
+   "test_file": "/datastore/voc-ner/data/ner/selected/max-tokens-bertje/json/test_all.json",
+   "model_name_or_path": "wietsedv/bert-base-dutch-cased", # replace with path to locally stored model
+   "output_dir": "/datastore/voc-ner/experiments/ner-bertje-all/seed1",
+   "do_train": true,
+   "seed": 1,                    # experiment with a few different seeds, and keep the one giving you the best validation loss
+   "num_train_epochs": 3,            # you may want to try a few more epochs
+   "per_device_train_batch_size": 16,        # larger values may give better results, but RAM is the limit
+   "do_eval": true,
+   "eval_steps": 250,                # each step saves a model of 1-2GB, you should experiment to see how many steps will fit
+   "load_best_model_at_end": true,        # so you can delete intermediary models afterwards
+   "evaluation_strategy": "steps",
+   "do_predict": false                # set this to true if you want to get results for your test set, but remember experimental parameters must be chosen based on the validation set
+}
