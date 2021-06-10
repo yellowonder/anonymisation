@@ -8,7 +8,10 @@ The jupyter notebooks contain python code for:
 (2) counting annotations in the annotated files with conll 2002 format. Python packages required are pandas, numpy, glob, re, os, and csv.
 
 Addionally, bash scripts are made available for:
+
 (1) concatanation of files after annotation
+
 (2) preprocessing of files: covert conll to json, indicate max token lenght, and shuffling sentences.
+
 (3) experimental phase: merges and systematically testing with training data size.
 
